@@ -6,158 +6,55 @@
 <title>QPN Partner Resource Guide</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    background: #0b1120;
-    color: #e6edf3;
-    min-height: 100vh;
-  }
-
-  .top-bar {
-    height: 5px;
-    background: linear-gradient(to right, #00b4d8, #4361ee, #7209b7);
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  }
-
-  .shell {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 32px 28px 60px;
-    padding-top: 36px;
-  }
-
-  .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 6px;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #0b1120; color: #e6edf3; min-height: 100vh; }
+  .top-bar { height: 5px; background: linear-gradient(to right, #00b4d8, #4361ee, #7209b7); position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+  .shell { max-width: 1080px; margin: 0 auto; padding: 32px 28px 60px; padding-top: 36px; }
+  .site-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
   .site-title { font-size: 30px; font-weight: 700; color: #f0f6ff; }
   .site-sub { font-size: 16px; color: #94a3b8; margin-bottom: 22px; }
   .logo { font-size: 17px; font-weight: 700; color: #f0f6ff; white-space: nowrap; }
   .logo sup { color: #00b4d8; font-size: 11px; }
   .header-rule { height: 0.5px; background: #1e2d45; margin-bottom: 24px; }
-
-  /* Overview grid */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 11px;
-    margin-bottom: 11px;
-  }
-  .overview-row3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 11px;
-    max-width: 75%;
-    margin: 0 auto 36px;
-  }
-  .ov-card {
-    border: 0.5px solid #1e2d45;
-    border-radius: 11px;
-    padding: 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    background: #111827;
-    cursor: pointer;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
+  .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; margin-bottom: 11px; }
+  .overview-row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; max-width: 75%; margin: 0 auto 36px; }
+  .ov-card { border: 0.5px solid #1e2d45; border-radius: 11px; padding: 14px; display: flex; align-items: center; gap: 12px; text-decoration: none; background: #111827; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; }
   .ov-card:hover { border-color: #4361ee; box-shadow: 0 2px 16px rgba(67,97,238,0.18); }
-  .ov-icon {
-    flex-shrink: 0;
-    width: 42px; height: 42px;
-    border-radius: 9px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-  }
+  .ov-icon { flex-shrink: 0; width: 42px; height: 42px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
   .ov-text { display: flex; flex-direction: column; gap: 3px; }
   .ov-name { font-size: 15px; font-weight: 600; color: #f0f6ff; line-height: 1.25; }
   .ov-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
-
-  .ic-1  { background: #0d2137; } .ic-2  { background: #0f1535; }
-  .ic-3  { background: #231508; } .ic-4  { background: #082618; }
-  .ic-5  { background: #1a0828; } .ic-6  { background: #220810; }
-  .ic-7  { background: #201c06; } .ic-8  { background: #062020; }
-  .ic-9  { background: #0c1a08; } .ic-10 { background: #22081c; }
-  .ic-11 { background: #0c1028; }
-
-  /* Tab nav */
-  .tab-nav {
-    display: flex; flex-wrap: wrap;
-    gap: 7px; margin-bottom: 18px;
-  }
-  .tab-btn {
-    font-size: 13px; font-weight: 500;
-    padding: 6px 15px;
-    border: 0.5px solid #1e2d45;
-    border-radius: 20px;
-    background: #111827; color: #94a3b8;
-    cursor: pointer; white-space: nowrap;
-    transition: all 0.15s;
-  }
+  .ic-1{background:#0d2137;} .ic-2{background:#0f1535;} .ic-3{background:#231508;}
+  .ic-4{background:#1a0828;} .ic-5{background:#220810;} .ic-6{background:#201c06;}
+  .ic-7{background:#062020;} .ic-8{background:#082618;} .ic-9{background:#0c1a08;}
+  .ic-10{background:#22081c;} .ic-11{background:#0c1028;}
+  .tab-nav { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+  .tab-btn { font-size: 13px; font-weight: 500; padding: 6px 15px; border: 0.5px solid #1e2d45; border-radius: 20px; background: #111827; color: #94a3b8; cursor: pointer; white-space: nowrap; transition: all 0.15s; }
   .tab-btn:hover { border-color: #4361ee; color: #4361ee; }
   .tab-btn.active { background: #4361ee; color: #fff; border-color: #4361ee; }
-
-  /* Slide card */
-  .slide-card {
-    display: none;
-    background: #111827;
-    border: 0.5px solid #1e2d45;
-    border-radius: 13px;
-    overflow: hidden;
-  }
+  .slide-card { display: none; background: #111827; border: 0.5px solid #1e2d45; border-radius: 13px; overflow: hidden; }
   .slide-card.active { display: block; }
   .slide-top-bar { height: 4px; background: linear-gradient(to right, #00b4d8, #4361ee, #7209b7); }
   .slide-inner { padding: 28px 36px 32px; }
-  .slide-header {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 16px;
-  }
+  .slide-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
   .slide-title { font-size: 28px; font-weight: 700; color: #f0f6ff; }
   .slide-rule { height: 0.5px; background: #1e2d45; margin-bottom: 20px; }
-
-  /* Sections */
   .sections { display: flex; flex-direction: column; }
   .section { padding: 18px 0; }
   .section + .section { border-top: 0.5px solid #1e2d45; }
-  .section-label {
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: #60a5fa; margin-bottom: 12px;
-  }
-  ul.bullets {
-    list-style: none; padding: 0;
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  ul.bullets li {
-    font-size: 16px; color: #f0f6ff;
-    line-height: 1.6; padding-left: 18px; position: relative;
-  }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #60a5fa; margin-bottom: 12px; }
+  ul.bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  ul.bullets li { font-size: 16px; color: #f0f6ff; line-height: 1.6; padding-left: 18px; position: relative; }
   ul.bullets li::before { content: '•'; position: absolute; left: 0; color: #60a5fa; }
-  ul.bullets li.sub {
-    padding-left: 32px; font-size: 15px; color: #94a3b8;
-  }
+  ul.bullets li.sub { padding-left: 32px; font-size: 15px; color: #94a3b8; }
   ul.bullets li.sub::before { content: '◦'; left: 16px; color: #94a3b8; }
   ul.bullets li.italic { font-style: italic; color: #94a3b8; font-size: 15px; }
   ul.bullets li.italic::before { color: #4a5568; }
-
   a { color: #58a6ff; text-decoration: none; border-bottom: 0.5px solid rgba(88,166,255,0.3); }
   a:hover { border-bottom-color: #58a6ff; }
-
-  .back-btn {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 14px; color: #94a3b8;
-    background: none; border: none; cursor: pointer;
-    margin-bottom: 16px; padding: 0;
-  }
+  .back-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 14px; color: #94a3b8; background: none; border: none; cursor: pointer; margin-bottom: 16px; padding: 0; }
   .back-btn:hover { color: #4361ee; }
-
   #overview-section { display: block; }
-  #detail-section   { display: none; }
-
+  #detail-section { display: none; }
   @media (max-width: 700px) {
     .overview-grid { grid-template-columns: repeat(2, 1fr); }
     .overview-row3 { grid-template-columns: repeat(1, 1fr); max-width: 100%; }
@@ -198,24 +95,24 @@
         <div class="ov-text"><div class="ov-name">QPN Email Distribution</div><div class="ov-desc">Monthly newsletter with partner updates</div></div>
       </a>
       <a class="ov-card" onclick="showSlide(3);return false;" href="#">
-        <div class="ov-icon ic-4">🎓</div>
-        <div class="ov-text"><div class="ov-name">Partner Academy</div><div class="ov-desc">Learning, enablement, and certifications</div></div>
-      </a>
-      <a class="ov-card" onclick="showSlide(4);return false;" href="#">
-        <div class="ov-icon ic-5">📁</div>
+        <div class="ov-icon ic-4">📁</div>
         <div class="ov-text"><div class="ov-name">QPN Highspot</div><div class="ov-desc">Centralized content and enablement repository</div></div>
       </a>
-      <a class="ov-card" onclick="showSlide(5);return false;" href="#">
-        <div class="ov-icon ic-6">🖥️</div>
+      <a class="ov-card" onclick="showSlide(4);return false;" href="#">
+        <div class="ov-icon ic-5">🖥️</div>
         <div class="ov-text"><div class="ov-name">QDemo</div><div class="ov-desc">Gold-standard demo environment</div></div>
       </a>
-      <a class="ov-card" onclick="showSlide(6);return false;" href="#">
-        <div class="ov-icon ic-7">🧪</div>
+      <a class="ov-card" onclick="showSlide(5);return false;" href="#">
+        <div class="ov-icon ic-6">🧪</div>
         <div class="ov-text"><div class="ov-name">Partner Sandbox</div><div class="ov-desc">Your brand to build and test custom assets</div></div>
       </a>
-      <a class="ov-card" onclick="showSlide(7);return false;" href="#">
-        <div class="ov-icon ic-8">🌐</div>
+      <a class="ov-card" onclick="showSlide(6);return false;" href="#">
+        <div class="ov-icon ic-7">🌐</div>
         <div class="ov-text"><div class="ov-name">Experience Community</div><div class="ov-desc">Forums, partner content, and product ideas</div></div>
+      </a>
+      <a class="ov-card" onclick="showSlide(7);return false;" href="#">
+        <div class="ov-icon ic-8">🎓</div>
+        <div class="ov-text"><div class="ov-name">Partner Academy</div><div class="ov-desc">Learning, enablement, and certifications</div></div>
       </a>
     </div>
     <div class="overview-row3">
@@ -239,6 +136,7 @@
     <button class="back-btn" onclick="showOverview()">← Back to overview</button>
     <div class="tab-nav" id="tab-nav"></div>
 
+    <!-- 0: QPN Assistant -->
     <div class="slide-card" data-slide="0">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
@@ -249,7 +147,6 @@
             <div class="section-label">What is it</div>
             <ul class="bullets">
               <li>Your primary channel for requesting support from Qualtrics Partner Success. Use it for renewals, partner-selection recommendations, and account escalations.</li>
-              <li class="italic">Note: Partner Success may not respond via email or Slack — use this channel.</li>
             </ul>
           </div>
           <div class="section">
@@ -259,10 +156,10 @@
               <li>Partner Program Inquiries</li>
               <li>Partner Admin Support</li>
               <li>New User Access and Support Questions for:</li>
-              <li class="sub">Partner Portal</li>
-              <li class="sub">Qualtrics Partner Academy</li>
-              <li class="sub">Highspot</li>
-              <li class="sub">QDemo</li>
+              <li class="sub"><a href="#" onclick="showSlide(1);return false;">Partner Portal</a></li>
+              <li class="sub"><a href="#" onclick="showSlide(7);return false;">Qualtrics Partner Academy</a></li>
+              <li class="sub"><a href="#" onclick="showSlide(3);return false;">Highspot</a></li>
+              <li class="sub"><a href="#" onclick="showSlide(4);return false;">QDemo</a></li>
             </ul>
           </div>
           <div class="section">
@@ -275,6 +172,7 @@
       </div>
     </div>
 
+    <!-- 1: Partner Portal -->
     <div class="slide-card" data-slide="1">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
@@ -300,14 +198,15 @@
             <ul class="bullets">
               <li>Link: <a href="https://partners.qualtrics.com/" target="_blank">partners.qualtrics.com</a></li>
               <li>Request access via <a href="https://qpn.az1.qualtrics.com/jfe/form/SV_3HHfO8TTZWUog3I" target="_blank">QPN Assistant Survey</a></li>
-              <li>Access Guide <a href="https://community.qualtrics.com/qualtrics-partner-network-43/accessing-the-partner-portal-25512" target="_blank">here</a></li>
-              <li>Navigation Tips <a href="https://community.qualtrics.com/qualtrics-partner-network-43/navigate-the-qualtrics-partner-portal-with-ease-28099" target="_blank">here</a></li>
+              <li>Partner Portal Access Guide <a href="https://community.qualtrics.com/qualtrics-partner-network-43/accessing-the-partner-portal-25512" target="_blank">here</a></li>
+              <li>Partner Portal Navigation Tips <a href="https://community.qualtrics.com/qualtrics-partner-network-43/navigate-the-qualtrics-partner-portal-with-ease-28099" target="_blank">here</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- 2: QPN Email Distribution List -->
     <div class="slide-card" data-slide="2">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
@@ -317,17 +216,17 @@
           <div class="section">
             <div class="section-label">What is it</div>
             <ul class="bullets">
-              <li>A monthly newsletter keeping partners informed on the latest from Qualtrics. Covers product updates, partnership news, webinars, training opportunities, marketing developments, QPN program updates, and ad hoc announcements.</li>
+              <li>A monthly newsletter keeping partners informed on the latest from Qualtrics.</li>
             </ul>
           </div>
           <div class="section">
             <div class="section-label">What you'll receive</div>
             <ul class="bullets">
-              <li>Monthly Partner Pulse newsletter</li>
+              <li>Monthly partner newsletter</li>
               <li>Product and platform updates</li>
-              <li>QPN program updates and announcements</li>
-              <li>Upcoming webinars and training opportunities</li>
               <li>Marketing and GTM developments</li>
+              <li>QPN program and partnership updates</li>
+              <li>Upcoming webinars and training opportunities</li>
               <li>Ad hoc announcements as needed</li>
             </ul>
           </div>
@@ -336,51 +235,15 @@
             <ul class="bullets">
               <li>Partner Portal account holders are automatically added to the distribution list</li>
               <li>No Partner Portal access yet? Contact your Practice Lead to get added</li>
-              <li>Added to the portal but still not receiving emails? <a href="https://qpn.az1.qualtrics.com/jfe/form/SV_3HHfO8TTZWUog3I" target="_blank">QPN Assistant Survey</a></li>
+              <li>Added to the portal but still not receiving emails? File a ticket via <a href="https://qpn.az1.qualtrics.com/jfe/form/SV_3HHfO8TTZWUog3I" target="_blank">QPN Assistant Survey</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- 3: QPN Highspot -->
     <div class="slide-card" data-slide="3">
-      <div class="slide-top-bar"></div>
-      <div class="slide-inner">
-        <div class="slide-header"><div class="slide-title">Partner Academy</div><div class="logo">qualtrics<sup>XM</sup></div></div>
-        <div class="slide-rule"></div>
-        <div class="sections">
-          <div class="section">
-            <div class="section-label">What is it</div>
-            <ul class="bullets">
-              <li>Qualtrics' partner learning, enablement, and certification platform.</li>
-            </ul>
-          </div>
-          <div class="section">
-            <div class="section-label">What's available</div>
-            <ul class="bullets">
-              <li>Certifications by product (CX / EX / MR) for the following roles:</li>
-              <li class="sub">Technology Consultant</li>
-              <li class="sub">Solution Architect</li>
-              <li class="sub">Account Executive</li>
-              <li class="sub">Engagement Manager</li>
-              <li class="sub">Solution Engineer</li>
-            </ul>
-          </div>
-          <div class="section">
-            <div class="section-label">Getting Access</div>
-            <ul class="bullets">
-              <li>Link: <a href="https://qualtrics.thoughtindustries.com/" target="_blank">qualtrics.thoughtindustries.com</a></li>
-              <li>Must have a Partner Portal account first</li>
-              <li>Contact your Practice Lead to create a Partner Academy account</li>
-              <li>Access Guide <a href="https://community.qualtrics.com/qualtrics-partner-network-43/new-learners-are-you-wondering-how-you-get-started-on-our-training-26118?tid=26118&fid=43" target="_blank">here</a></li>
-              <li>Still having trouble? <a href="https://qpn.az1.qualtrics.com/jfe/form/SV_3HHfO8TTZWUog3I" target="_blank">QPN Assistant Survey</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-card" data-slide="4">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
         <div class="slide-header"><div class="slide-title">QPN Highspot</div><div class="logo">qualtrics<sup>XM</sup></div></div>
@@ -413,7 +276,8 @@
       </div>
     </div>
 
-    <div class="slide-card" data-slide="5">
+    <!-- 4: QDemo -->
+    <div class="slide-card" data-slide="4">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
         <div class="slide-header"><div class="slide-title">QDemo</div><div class="logo">qualtrics<sup>XM</sup></div></div>
@@ -444,7 +308,8 @@
       </div>
     </div>
 
-    <div class="slide-card" data-slide="6">
+    <!-- 5: Partner Sandbox -->
+    <div class="slide-card" data-slide="5">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
         <div class="slide-header"><div class="slide-title">Partner Sandbox</div><div class="logo">qualtrics<sup>XM</sup></div></div>
@@ -475,7 +340,8 @@
       </div>
     </div>
 
-    <div class="slide-card" data-slide="7">
+    <!-- 6: Experience Community -->
+    <div class="slide-card" data-slide="6">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
         <div class="slide-header"><div class="slide-title">Experience Community</div><div class="logo">qualtrics<sup>XM</sup></div></div>
@@ -507,6 +373,45 @@
       </div>
     </div>
 
+    <!-- 7: Partner Academy -->
+    <div class="slide-card" data-slide="7">
+      <div class="slide-top-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header"><div class="slide-title">Partner Academy</div><div class="logo">qualtrics<sup>XM</sup></div></div>
+        <div class="slide-rule"></div>
+        <div class="sections">
+          <div class="section">
+            <div class="section-label">What is it</div>
+            <ul class="bullets">
+              <li>Qualtrics' partner learning, enablement, and certification platform.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <div class="section-label">What's available</div>
+            <ul class="bullets">
+              <li>Certifications by product (CX / EX / MR) for the following roles:</li>
+              <li class="sub">Technology Consultant</li>
+              <li class="sub">Solution Architect</li>
+              <li class="sub">Account Executive</li>
+              <li class="sub">Engagement Manager</li>
+              <li class="sub">Solution Engineer</li>
+            </ul>
+          </div>
+          <div class="section">
+            <div class="section-label">Getting Access</div>
+            <ul class="bullets">
+              <li>Link: <a href="https://qualtrics.thoughtindustries.com/" target="_blank">qualtrics.thoughtindustries.com</a></li>
+              <li>Must have a <a href="#" onclick="showSlide(1);return false;">Partner Portal</a> account first</li>
+              <li>Contact your Practice Lead to create a Partner Academy account</li>
+              <li>Partner Academy Access Guide <a href="https://community.qualtrics.com/qualtrics-partner-network-43/new-learners-are-you-wondering-how-you-get-started-on-our-training-26118?tid=26118&fid=43" target="_blank">here</a>. You'll need to access the <a href="#" onclick="showSlide(6);return false;">Experience Community</a> to view this.</li>
+              <li>Still having trouble? File a ticket via <a href="https://qpn.az1.qualtrics.com/jfe/form/SV_3HHfO8TTZWUog3I" target="_blank">QPN Assistant Survey</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8: Product Updates -->
     <div class="slide-card" data-slide="8">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
@@ -524,7 +429,7 @@
             <ul class="bullets">
               <li>Subscribe to <a href="https://community.qualtrics.com/product-release-notes-96" target="_blank">Weekly Product Release Notes</a></li>
               <li>Review <a href="https://qualtrics.highspot.com/items/673fa8c3ef6cdc64e62617c8?lfrm=isd.9" target="_blank">Qualtrics Roadmap</a> on Highspot, updated quarterly</li>
-              <li>Ensure you're on the QPN Email Distribution List — covers product updates, releases, and roadmap sessions</li>
+              <li>Ensure you're on the <a href="#" onclick="showSlide(2);return false;">QPN Email Distribution List</a> — covers product updates, releases, and roadmap sessions</li>
               <li>QPreview / Early Access (EA) Program: opt your partner org's brand into upcoming feature previews</li>
               <li class="sub">Brand admin completes the <a href="https://qxm.co1.qualtrics.com/jfe/form/SV_6Gnx5e0Gbh2Dqkd" target="_blank">opt-in survey</a> (brand admin credentials required)</li>
               <li class="sub">Brand signs the Preview Legal Agreement via DocuSign</li>
@@ -536,6 +441,7 @@
       </div>
     </div>
 
+    <!-- 9: Product Support -->
     <div class="slide-card" data-slide="9">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
@@ -554,13 +460,14 @@
               <li><a href="https://www.qualtrics.com/support/" target="_blank">Qualtrics Support Page</a></li>
               <li><a href="https://www.qualtrics.com/support/survey-platform/sp-administration/artificial-intelligence-ai-administration/" target="_blank">Qualtrics AI Support Page</a></li>
               <li>Search <a href="https://qualtrics.highspot.com/spots/6673137ab456d5e3caeb7e65" target="_blank">QPN Highspot</a> for specific product or feature information</li>
-              <li>Can't find what you need? Submit a request via the <a href="https://qpn.az1.qualtrics.com/jfe/form/SV_3HHfO8TTZWUog3I" target="_blank">QPN Assistant Survey</a> for technical product questions</li>
+              <li>Can't find what you need? Submit a request for technical support via the <a href="https://qpn.az1.qualtrics.com/jfe/form/SV_3HHfO8TTZWUog3I" target="_blank">QPN Assistant Survey</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- 10: Demo Resources -->
     <div class="slide-card" data-slide="10">
       <div class="slide-top-bar"></div>
       <div class="slide-inner">
@@ -598,8 +505,8 @@
 
 <script>
 const tabs = [
-  'QPN Assistant','Partner Portal','Email Dist. List','Partner Academy',
-  'QPN Highspot','QDemo','Partner Sandbox','Exp. Community',
+  'QPN Assistant','Partner Portal','Email Dist. List','QPN Highspot',
+  'QDemo','Partner Sandbox','Exp. Community','Partner Academy',
   'Product Updates','Product Support','Demo Resources'
 ];
 const tabNav = document.getElementById('tab-nav');
